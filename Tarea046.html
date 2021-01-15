@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estiloNews.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <title>Taller JQuery</title>
+    <script type="text/javascript">
+        
+        function mostrarMensaje(){
+            var email = document.forms.inicioSesion.email.value;
+            alert (email);
+            var usertype = parseInt(document.forms.inicioSesion.tipoUsuario.value);
+
+            switch(usertype){
+                case 1:
+                    alert('Usuario tipo 1');
+                    break;
+                case 2:
+                    alert('Usuario tipo 2');
+                    break;
+                case 3:
+                    alert('Usuario tipo 3');
+                    break;
+                case 4:
+                    alert('Usuario tipo 4');
+                    break;
+            }
+        }
+
+        function validaNombre() {
+            if($("#email").val() == ""){
+                alert("El campo email no puede estar vacio.");
+                console.log("funcion");
+                $("#email").focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        $(document).ready(function(){
+            $("#botonIngresar").click(function() {
+                if (validaNombre()) {
+                    $("#fracaso").hide();
+                    $("#exito").delay(500).fadeIn("slow");
+                    console.log("funcion");
+                } else {
+                    $("#exito").hide();
+                    $("#fracaso").delay(500).fadeIn("slow");
+                    console.log("funcion2");
+                }
+            });
+        });
+        $(document).ready(function(){
+            $("#botonOcultar").click(function(){
+                $("p").slideUp(2000);
+            });
+        });
+        $(document).ready(function(){
+            $("#botonMostrar").click(function(){
+                $("p").slideDown(2000);
+            });
+        });
+        $(document).ready(function(){
+            $("#botonOcultarImagen").click(function(){
+                $("img").fadeOut(5000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#botonMostrarImagen").click(function(){
+                $("img").fadeIn(5000);
+            });
+        });
+        $(document).ready(function(){
+            $("#botonOcultarJumbo").click(function(){
+                $("div.jumbotron").hide(4000);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#botonMostrarJumbo").click(function(){
+                $("div.jumbotron").show(4000);
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Trump VS Biden:The future of the United States</h1>
+          <p class="lead">2 hours ago</p>
+        </div>
+      </div>
+      <input type="button" class="btn btn-success" id="botonOcultarJumbo" value="Ocultar Jumbotron">
+      <input type="button" class="btn btn-success" id="botonMostrarJumbo" value="Mostrar Jumbotron">
+      
+      <main class="contenedor">
+          <font size="7">
+
+          <h5 class="fw-300 centrar-texto ">What can we expect from the elections?</h5>
+          <div class="grid">
+              <div class="columnas">
+              
+                  <img src="img/image1.jpg " height="400" class="centerImage">
+                  <br>
+                  <input type="button" class="btn btn-success" id="botonOcultarImagen" value="Ocultar Imagen">
+                  <input type="button" class="btn btn-success" id="botonMostrarImagen" value="Mostrar Imagen">
+
+              </div>
+              <div class="columnas"></div>
+                  <font size="5">
+                    <p>Joe Biden has a lead in the crucial state of Pennsylvania in the US presidential race. But even if he is declared the overall winner, there could be court challenges to the result 
+                      ahead, which may cause uncertainty for businesses, as Myron Brilliant, head of international affairs at the US Chamber of Commerce, explains. Also in the programme, trade 
+                      relations between Australia and China are plumbing new depths amid reports that a range of Australian goods are no longer welcome on Chinese shores. Andy Xie is an independent 
+                      economist based in China and discusses the background to the dispute. Plus, the New Zealand national All Blacks rugby team is facing financial difficulties as a result of the
+                       pandemic. The team is looking to private equity investors for money, but we hear from Alex Lowe, rugby correspondent at The Times, that fans fear it could change the spirit of the game.</p>
+                    <p>The new was taken from:</p>
+                    <a href="https://www.bbc.co.uk/programmes/w172x58qxhjnfnh" class ="enlace">www.bbc.co.uk/programmes/w172x58qxhjnfnh</a>
+                    <br>
+                  <input type="button" class="btn btn-success" id="botonOcultar" value="Ocultar Texto">
+                  <input type="button" class="btn btn-success" id="botonMostrar" value="Mostrar Texto">
+                  <br>
+                  
+              </div>
+          </div>
+          
+      </main>
+      
+</body>
+</html>
