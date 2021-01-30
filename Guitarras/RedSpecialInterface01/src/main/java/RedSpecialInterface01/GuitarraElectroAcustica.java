@@ -16,8 +16,8 @@ public  class GuitarraElectroAcustica extends Guitarra {
     boolean ConexionARedElectrica;
     boolean pastillas;
     
-    public  GuitarraElectroAcustica(String serial,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean microfono,String TipoDeCuerpo,boolean cajaDeResonancia,String tipodeCuerdas, boolean ConexionARedElectrica,boolean pastillas) {
-        super(serial,color,NumeroDeCuerdas,TipoDeMadera,cajaDeResonancia,tipodeCuerdas,TipoDeCuerpo);
+    public  GuitarraElectroAcustica(String serial,int precio,double descuento,double precioTotal,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean microfono,String TipoDeCuerpo,boolean cajaDeResonancia,String tipodeCuerdas, boolean ConexionARedElectrica,boolean pastillas) {
+        super(serial,precio,descuento, precioTotal,color,NumeroDeCuerdas,TipoDeMadera,cajaDeResonancia,tipodeCuerdas,TipoDeCuerpo);
         //this.microfono=true;
         this.TipoDeCuerpo="curvas redondeadas";
     }
@@ -25,6 +25,14 @@ public  class GuitarraElectroAcustica extends Guitarra {
     @Override
     public String toString() {
         return "GuitarraElectroAcustica{" + "microfono=" + microfono + ", cajaDeResonancia=" + cajaDeResonancia + ", ConexionARedElectrica=" + ConexionARedElectrica + ", pastillas=" + pastillas + '}';
+    }
+    
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = 2000000;
     }
     public boolean obtenerMicrofono() {
         return microfono;

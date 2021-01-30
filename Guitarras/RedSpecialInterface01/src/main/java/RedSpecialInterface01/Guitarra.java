@@ -23,9 +23,10 @@ public abstract class Guitarra {
     boolean cajaDeResonancia;
     String tipoDeCuerdas;
     String TipoDeCuerpo;
-
+    int precio;
+    double precioTotal;
     String serial;
-
+    double descuento;
     public String getSerial() {
         return serial;
     }
@@ -34,7 +35,7 @@ public abstract class Guitarra {
         this.serial = serial;
     }
 
-    public  Guitarra(String serial,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean cajaDeResonancia,String tipoDeCuerdas,String TipoDeCuerpo) {
+    public  Guitarra(String serial,int precio,double descuento,double precioTotal,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean cajaDeResonancia,String tipoDeCuerdas,String TipoDeCuerpo) {
                         
         this.color=color;
         this.TipoDeCuerpo=TipoDeCuerpo;
@@ -43,7 +44,19 @@ public abstract class Guitarra {
         this.tipoDeCuerdas=tipoDeCuerdas;
         this.NumeroDeCuerdas=NumeroDeCuerdas;
         this.serial=serial;
+        this.precio=precio;
+        this.descuento=0.2;
+        this.precioTotal=precioTotal;
     }
+
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(double descuento,int precio) {
+        this.precioTotal = precio-(precio*descuento);
+    }
+
     public abstract void tocar();
     public abstract void afinar();
     public abstract void sonar();

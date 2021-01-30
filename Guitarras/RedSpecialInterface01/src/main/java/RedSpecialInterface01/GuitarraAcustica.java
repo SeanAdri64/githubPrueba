@@ -11,9 +11,17 @@ package RedSpecialInterface01;
  */
 public   class GuitarraAcustica extends Guitarra{
     
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = 1000000;
+    }
     //boolean cajaDeResonancia=true;
-    public  GuitarraAcustica(String serial,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean cajaDeResonancia,String tipodeCuerdas,String TipoDeCuerpo) {
-        super( serial,color,NumeroDeCuerdas,TipoDeMadera,cajaDeResonancia,tipodeCuerdas,TipoDeCuerpo);
+    public  GuitarraAcustica(String serial,int precio,double descuento ,double precioTotal,String color,int NumeroDeCuerdas ,String TipoDeMadera,boolean cajaDeResonancia,String tipodeCuerdas,String TipoDeCuerpo) {
+        super( serial,precio,descuento, precioTotal,color,NumeroDeCuerdas,TipoDeMadera,cajaDeResonancia,tipodeCuerdas,TipoDeCuerpo);
         //this.TipoDeCuerpo="curvas redondeadas";
        
 

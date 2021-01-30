@@ -11,8 +11,8 @@ package RedSpecialInterface01;
  */
 public abstract class BajoElectrico extends Guitarra{
 
-    public BajoElectrico(String serial, String color, int NumeroDeCuerdas, String TipoDeMadera, boolean cajaDeResonancia, String tipoDeCuerdas, String TipoDeCuerpo) {
-        super(serial, color, NumeroDeCuerdas, TipoDeMadera, cajaDeResonancia, tipoDeCuerdas, TipoDeCuerpo);
+    public BajoElectrico(String serial,int precio,double descuento,double precioTotal, String color, int NumeroDeCuerdas, String TipoDeMadera, boolean cajaDeResonancia, String tipoDeCuerdas, String TipoDeCuerpo) {
+        super(serial,precio,descuento, precioTotal, color, NumeroDeCuerdas, TipoDeMadera, cajaDeResonancia, tipoDeCuerdas, TipoDeCuerpo);
     }
 
     @Override
@@ -28,6 +28,13 @@ public abstract class BajoElectrico extends Guitarra{
     @Override
     public void sonar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+        public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = 3500000;
     }
     public static void sonarBajoElectrico(){
         System.out.println("El Bajo Eléctrico esta sonando");

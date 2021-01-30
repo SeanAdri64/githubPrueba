@@ -17,6 +17,13 @@ import java.util.List;
     
     public SalonGuitarra(){
         guitarras = new ArrayList<Guitarra>(); 
+        /*
+        tipo de guitarra
+        precio final
+        agregara orden
+        eliminar del inventario
+        */
+        
     }
 
     public List<Guitarra> getGuitarras() {
@@ -40,6 +47,9 @@ import java.util.List;
     }
     public  void agregarGuitarra(Guitarra guitar) {
         guitarras.add(guitar);
+    }
+    public  void eliminarGuitarra(Guitarra guitar) {
+        guitarras.remove(guitar);
     }
 
     
